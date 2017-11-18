@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114121717) do
+ActiveRecord::Schema.define(version: 20171118062931) do
 
   create_table "completeds", force: :cascade do |t|
     t.integer "contact_id"
     t.text "text"
-    t.string "img_path"
     t.float "post_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "proof_image_file_name"
+    t.string "proof_image_content_type"
+    t.integer "proof_image_file_size"
+    t.datetime "proof_image_updated_at"
     t.index ["contact_id"], name: "index_completeds_on_contact_id"
   end
 
@@ -28,11 +31,15 @@ ActiveRecord::Schema.define(version: 20171114121717) do
     t.string "login"
     t.string "password"
     t.string "phone"
-    t.string "avatar_path"
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "virginity"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string "avatar"
   end
 
   create_table "faileds", force: :cascade do |t|
@@ -47,10 +54,13 @@ ActiveRecord::Schema.define(version: 20171114121717) do
   create_table "publisheds", force: :cascade do |t|
     t.integer "contact_id"
     t.text "text"
-    t.string "img_path"
     t.float "post_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "proof_image_file_name"
+    t.string "proof_image_content_type"
+    t.integer "proof_image_file_size"
+    t.datetime "proof_image_updated_at"
     t.index ["contact_id"], name: "index_publisheds_on_contact_id"
   end
 

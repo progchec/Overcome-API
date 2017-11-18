@@ -27,7 +27,7 @@ class PublishedsController < ApplicationController
 
   private
     def published_params
-      params.permit(:text, :img_path, :post_rating)
+      params.permit(:text, :image_base, :post_rating)
     end
 
     def set_contact
