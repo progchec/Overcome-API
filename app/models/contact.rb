@@ -17,7 +17,7 @@ class Contact < ApplicationRecord
 
   # validates_attachment :avatar, :presence => true
 
-  do_not_validate_attachment_file_type :avatar
+  # do_not_validate_attachment_file_type :avatar
 
   private
     def parse_image
