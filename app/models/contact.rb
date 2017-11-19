@@ -15,7 +15,7 @@ class Contact < ApplicationRecord
   validates_presence_of :name, :surname, :login, :password, :image_base,
     :phone, :rating, :virginity
 
-  validates_attachment :avatar, :presence => true
+  # validates_attachment :avatar, :presence => true
 
   do_not_validate_attachment_file_type :avatar
 
