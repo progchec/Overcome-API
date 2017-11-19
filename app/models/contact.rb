@@ -9,10 +9,10 @@ class Contact < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "600x600>", thumb: "100x100>" },
       default_url: "/images/:style/default_avatar_icon.png"
 
-  validates_presence_of :name, :surname, :login, :password, :avatar,
+  validates_presence_of :name, :surname, :login, :password,
     :phone, :rating, :virginity
 
-  validates_attachment :avatar, :presence => true
+  # validates_attachment :avatar
 
   do_not_validate_attachment_file_type :avatar
 end
