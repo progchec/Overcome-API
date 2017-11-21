@@ -19,6 +19,10 @@ class ContactsController < ApplicationController
     json_response(Contact.find_by(login: params[:login]))
   end
 
+  def find_by_phone
+    json_response(Contact.find_by(phone: params[:phone]))
+  end
+
   def update
     @contact.update(contact_params)
     head :no_content
