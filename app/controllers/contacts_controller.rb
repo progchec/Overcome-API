@@ -15,6 +15,10 @@ class ContactsController < ApplicationController
     json_response(@contact)
   end
 
+  def find_by_login
+    json_response(Contact.find_by(login: params[:login]))
+  end
+
   def update
     @contact.update(contact_params)
     head :no_content
