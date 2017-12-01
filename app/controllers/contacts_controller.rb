@@ -36,7 +36,7 @@ class ContactsController < ApplicationController
   private
     def contact_params
       params.permit(:name, :surname, :login, :password,
-        :phone, :avatar, :rating, :virginity)
+        :phone, :image_base, :rating, :virginity)
     end
 
     def set_contact
