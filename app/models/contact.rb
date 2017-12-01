@@ -9,13 +9,11 @@ class Contact < ApplicationRecord
   has_many :completeds, dependent: :destroy
   has_many :faileds, dependent: :destroy
 
-  has_attached_file :avatar,
+  has_attached_file :avatar, styles: { medium: "300x300>" },
       default_url: "/images/:style/default_avatar_icon.png"
 
   validates_presence_of :name, :surname, :login, :password,
     :phone, :rating, :virginity
-
-  # validates_attachment :avatar
 
   do_not_validate_attachment_file_type :avatar
 
