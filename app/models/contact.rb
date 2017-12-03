@@ -8,7 +8,7 @@ class Contact < ApplicationRecord
 
   has_attached_file :avatar, styles: { medium: "300x300>" },
       default_url: "/images/:style/default_avatar_icon.png",
-      path: ':rails_root/public/system/pictures/image/:id_partition/:style_:filename'
+      path: ':rails_root/public/system/pictures/image/:id_partition/:style/:filename'
 
   validates_presence_of :name, :surname, :login, :password,
     :phone, :rating, :virginity
