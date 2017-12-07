@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20171118062931) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "completeds", force: :cascade do |t|
-    t.integer "contact_id"
+    t.bigint "contact_id"
     t.text "text"
     t.float "post_rating"
     t.datetime "created_at", null: false
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20171118062931) do
   end
 
   create_table "faileds", force: :cascade do |t|
-    t.integer "contact_id"
+    t.bigint "contact_id"
     t.text "text"
     t.float "post_rating"
     t.datetime "created_at", null: false
@@ -52,7 +55,7 @@ ActiveRecord::Schema.define(version: 20171118062931) do
   end
 
   create_table "publisheds", force: :cascade do |t|
-    t.integer "contact_id"
+    t.bigint "contact_id"
     t.text "text"
     t.float "post_rating"
     t.datetime "created_at", null: false
@@ -65,11 +68,15 @@ ActiveRecord::Schema.define(version: 20171118062931) do
   end
 
   create_table "runnings", force: :cascade do |t|
-    t.integer "contact_id"
+    t.bigint "contact_id"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["contact_id"], name: "index_runnings_on_contact_id"
   end
 
+  add_foreign_key "completeds", "contacts"
+  add_foreign_key "faileds", "contacts"
+  add_foreign_key "publisheds", "contacts"
+  add_foreign_key "runnings", "contacts"
 end
