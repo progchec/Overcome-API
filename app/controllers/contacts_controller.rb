@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
   end
 
   def show
-    json_response(@contact)
+    render json.extract! @item, :id, :name, :description, :picture, :created_at, :updated_at
   end
 
   def find_by_login
@@ -21,6 +21,10 @@ class ContactsController < ApplicationController
 
   def find_by_phone
     json_response(Contact.find_by(phone: params[:phone]))
+  end
+
+  def find_password_by_login
+    json_response(Contact.find_by(login: params[:login]).password)
   end
 
   def update
