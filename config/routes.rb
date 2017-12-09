@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   get 'contacts/find_by_login/:login' => 'contacts#find_by_login'
   get 'contacts/find_by_phone/:phone' => 'contacts#find_by_phone'
-  get 'contacts/find_password_by_login/:login' => 'contacts#find_password_by_login'
+
+  get 'contacts/find_out_id/:login' => 'contacts#find_out_id'
 end

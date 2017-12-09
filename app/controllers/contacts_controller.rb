@@ -23,8 +23,13 @@ class ContactsController < ApplicationController
     json_response(Contact.find_by(phone: params[:phone]))
   end
 
+  def find_out_id
+    contact = Contact.find_by(login: params[:login])
+    json_response(contact.id)
+  end
+
   def find_password_by_login
-    json_response(Contact.find_by(login: params[:login]).password)
+    json_response(Contact.find_by(login: params[:login]))
   end
 
   def update
