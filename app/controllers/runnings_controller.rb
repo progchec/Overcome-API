@@ -3,6 +3,8 @@ class RunningsController < ApplicationController
   before_action :set_contact_running, only: [:show, :update, :destroy]
 
   def index
+    # сделать так, чтобы выводились только текста
+
     json_response(@contact.runnings)
   end
 

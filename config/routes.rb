@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get 'contacts/find_by_phone/:phone' => 'contacts#find_by_phone'
 
   get 'contacts/find_out_id/:login' => 'contacts#find_out_id'
+
+  get 'contacts/avatar/:id' => 'contacts#avatar'
 end
