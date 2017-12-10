@@ -37,6 +37,7 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
   config.public_file_server.enabled = true
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 
 
   # Raises error for missing translations
