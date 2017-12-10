@@ -2,9 +2,9 @@ class Completed < ApplicationRecord
   belongs_to :contact
   mount_uploader :proof_image, AvatarUploader
 
-  has_attached_file :proof_image, styles: { medium: "300x300>", thumb: "100x100>" }
-  validates_attachment :proof_image, presence: true
-  do_not_validate_attachment_file_type :proof_image
+  has_attached_file :proof_image, styles: { medium: "300x300>" }
 
-  validates_presence_of :text, :post_rating
+  validates_attachment_content_type :proof_image, content_type: /\Aimage\/.*\z/
+
+  validates_presence_of :text, :post_rating, :proof_image
 end
