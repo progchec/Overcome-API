@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118062931) do
+ActiveRecord::Schema.define(version: 20171211114026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171118062931) do
     t.string "proof_image_content_type"
     t.integer "proof_image_file_size"
     t.datetime "proof_image_updated_at"
+    t.string "proof_image"
     t.index ["contact_id"], name: "index_completeds_on_contact_id"
   end
 
@@ -64,6 +65,11 @@ ActiveRecord::Schema.define(version: 20171118062931) do
     t.string "proof_image_content_type"
     t.integer "proof_image_file_size"
     t.datetime "proof_image_updated_at"
+    t.string "published_image_file_name"
+    t.string "published_image_content_type"
+    t.integer "published_image_file_size"
+    t.datetime "published_image_updated_at"
+    t.string "published_image"
     t.index ["contact_id"], name: "index_publisheds_on_contact_id"
   end
 

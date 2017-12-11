@@ -12,7 +12,8 @@ class ContactsController < ApplicationController
   end
 
   def show
-    render json.extract! @item, :id, :name, :description, :picture, :created_at, :updated_at
+    contact = Contact.find_by(id: params[:id])
+    json_response(contact)
   end
 
   def avatar
